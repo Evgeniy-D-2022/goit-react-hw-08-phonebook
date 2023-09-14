@@ -10,7 +10,7 @@ const Filter = () => {
     const handleChange = e => {
         const query = e.target.value;
         dispatch(setStatusFilter(query))
-    }
+    };
 
     return ( 
         <label className={css.filter__label}>Find contacts by name
@@ -21,7 +21,6 @@ const Filter = () => {
         onChange={handleChange}
         />
         </label>
-
     )
 };
 

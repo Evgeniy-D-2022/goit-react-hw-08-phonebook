@@ -18,13 +18,12 @@ const Form = () => {
       number: e.target.number.value,
     };
 
-    if( contacts.find(contact => contact.name.toLowerCase() === e.target.name.value.toLowerCase())) {
+    if(contacts.find(contact => contact.name.toLowerCase() === e.target.name.value.toLowerCase())) {
       Notiflix.Notify.warning(`${e.target.name.value} is already in contacts.`);
       e.target.reset()
       return;
     }
     dispatch(addContact(contact));
-
     e.target.reset()
   };
 
@@ -56,6 +55,6 @@ const Form = () => {
       </form>
         </>
     )
-  }
+  };
 
 export default Form;

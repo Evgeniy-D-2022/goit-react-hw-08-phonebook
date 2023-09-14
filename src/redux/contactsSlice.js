@@ -18,35 +18,34 @@ export const contactsSlice = createSlice({
         contacts: [],
         error: null,
         isLoading: false,
-
     },
-    extraReducers: {
-        [fetchContacts.pending]: handlePending,
-        [addContact.pending]: handlePending,
-        [deleteContact.pending]: handlePending,
 
-        [fetchContacts.rejected]: handleRejected,
-        [addContact.rejected]: handleRejected,
-        [deleteContact.rejected]: handleRejected,
+    extraReducers: builder => 
+    builder
 
-        [fetchContacts.fulfilled](state, action) {
-            state.isLoading = false;
-            state.error = null;
-            state.contacts = action.payload;
-        },
+    .addCase(fetchContacts.pending, (state, action) => handlePending(state))
+    .addCase(addContact.pending, (state, action) => handlePending(state))
+    .addCase(deleteContact.pending, (state, action) => handlePending(state))
 
-        [addContact.fulfilled](state, action) {
-            state.isLoading = false;
-            state.error = null;
-            state.contacts.push(action.payload);
-        },
+    .addCase(fetchContacts.rejected, (state, action) => handleRejected(state, action))
+    .addCase(addContact.rejected, (state, action) => handleRejected(state, action))
+    .addCase(deleteContact.rejected, (state, action) => handleRejected(state, action))
 
-        [deleteContact.fulfilled](state, action) {
-            state.isLoading = false;
-            state.error = null;
-            state.contacts = state.contacts.filter(contact => contact.id !== action.payload.id);
-        },    
-    }
+    .addCase(fetchContacts.fulfilled, (state, action) =>{
+        state.isLoading = false;
+        state.error = null;
+        state.contacts = action.payload;
+    })
+    .addCase(addContact.fulfilled, (state, action) =>{
+        state.isLoading = false;
+        state.error = null;
+        state.contacts.push(action.payload);
+    })
+    .addCase(deleteContact.fulfilled, (state, action) =>{
+        state.isLoading = false;
+        state.error = null;
+        state.contacts = state.contacts.filter(contact => contact.id !== action.payload.id);
+    }),
 });
 
 export default contactsSlice.reducer;

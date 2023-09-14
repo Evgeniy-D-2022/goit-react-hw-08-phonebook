@@ -1,12 +1,12 @@
 import React from "react";
-import css from './Contacts.module.css';
+import css from './ContactsList.module.css';
 import { useDispatch, useSelector } from "react-redux";
 import { deleteContact } from "redux/operations";
 import { selectContacts, selectFilter } from "redux/selectors";
 
 
 
-const Contacts = () => {
+const ContactsList = () => {
   const contacts = useSelector(selectContacts);
   const filter = useSelector(selectFilter);
   const dispatch = useDispatch();
@@ -32,8 +32,7 @@ const Contacts = () => {
           </button>
             </li>
           ))}
-      </ul>
-       
+      </ul>  
     )};
 
-export default Contacts;
+export default ContactsList;

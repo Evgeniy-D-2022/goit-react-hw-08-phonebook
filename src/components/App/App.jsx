@@ -1,14 +1,17 @@
-import css from './App.module.css'
-import Form from "../Form/Form";
-import Contacts from "../Contacts/Contacts";
-import Filter from "../Filter/Filter";
+
+import { RestrictedRoute } from 'RestrictedRoute';
+import Login from '../../pages/Login/Login';
+import Register from '../../pages/Register/Register';
+import Contacts from "../ContactsList/ContactsList";
 import { useDispatch, useSelector } from 'react-redux';
-import { selectContacts, selectError, selectIsLoading } from 'redux/selectors';
 import { useEffect } from 'react';
-import { fetchContacts } from 'redux/operations';
 import { selectIsRefreshing } from 'redux/auth/auth-selectors';
 import { refreshUser } from 'redux/auth/auth-operations';
-import { Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
+import Loader from 'components/Loader/Loader';
+import AppBar from 'components/AppBar/AppBar';
+import Home from '../../pages/Home/Home';
+import { PrivateRoute } from 'PrivateRoute';
 
 const App = () => {
 
@@ -23,28 +26,25 @@ const App = () => {
       <Loader />
     ) : (
       <Routes>
-        
-      </Routes>)
-
-
-
-
-
-  //   <div className={css.container}>
-  //      <h1 className={css.title}>Phonebook</h1>
-  //    <Form />
-  //    {contacts.length > 0 ? (
-  //     <>
-  //     <h2 className={css.contacts__title}>Contacts</h2>
-  //     <Filter />
-  //     <Contacts />
-  //     </>
-  //    ) : (
-  //    <p className={css.contacts__text}>No available contacts</p>
-  //    )}  
-  //    {isLoading && !error && <p>Loading...</p>}
-  //   </div>
-  //   );
-  // };
+        <Route path='/' element ={<AppBar />} />
+        <Route index element = {<Home />} />
+        <Route 
+        path='/register'
+        element ={ <RestrictedRoute 
+        component={Register} 
+        redirectTo='/contacts' /> } />
+        <Route
+        path='/login'
+        element ={ <RestrictedRoute
+        component={Login}
+        redirectTo='/contacts' />} />
+        <Route 
+        path='/contacts' 
+        element ={ <PrivateRoute
+        component={Contacts}
+        redirectTo='/login' />} />
+      </Routes>
+      )
+};
 
 export default App;
