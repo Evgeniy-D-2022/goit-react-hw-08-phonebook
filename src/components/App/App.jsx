@@ -1,8 +1,9 @@
 
 import { RestrictedRoute } from 'RestrictedRoute';
+import Home from '../../pages/Home/Home';
 import Login from '../../pages/Login/Login';
 import Register from '../../pages/Register/Register';
-import Contacts from "../ContactsList/ContactsList";
+import Contacts from "../../pages/Contacts/Contacts";
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { selectIsRefreshing } from 'redux/auth/auth-selectors';
@@ -10,7 +11,7 @@ import { refreshUser } from 'redux/auth/auth-operations';
 import { Route, Routes } from 'react-router-dom';
 import Loader from 'components/Loader/Loader';
 import AppBar from 'components/AppBar/AppBar';
-import Home from '../../pages/Home/Home';
+
 import { PrivateRoute } from 'PrivateRoute';
 
 const App = () => {

@@ -1,0 +1,11 @@
+.container {
+    width: 1200px;
+    padding: 0 32px;
+    
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    background-color: #171717;
+    margin-bottom: 14px;
+  }
