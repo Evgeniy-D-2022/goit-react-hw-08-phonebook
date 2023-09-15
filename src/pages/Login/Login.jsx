@@ -54,7 +54,7 @@ const Login = () => {
             ></input>
           </label>
           <button type="submit" className={css.form__btn}>
-            LogIn
+            Log In
           </button>
         </form>
       </div>

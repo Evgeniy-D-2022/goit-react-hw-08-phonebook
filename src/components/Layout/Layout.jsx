@@ -10,7 +10,7 @@ const Layout = () => {
       <AppBar />
       <Suspense
         fallback={
-            <Loader color={'#0fc1dd'} size={'100'} />
+            <Loader color={'#0f84dd'} size={'100'} />
         }>
         <Outlet />
       </Suspense>
