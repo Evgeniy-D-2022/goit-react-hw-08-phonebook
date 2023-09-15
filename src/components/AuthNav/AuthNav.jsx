@@ -4,6 +4,7 @@ import css from './AuthNav.module.css';
 const AuthNav = () => {
     
     return (
+            <>
             <ul className={css.user__bar}>
                 <li className={css.navigation__item}>
                 <NavLink className={css.navigation__link} to='/register'>
@@ -16,9 +17,7 @@ const AuthNav = () => {
             </NavLink>
                 </li>
             </ul>
-           
-          
-
+            </>
     )
 };
 
