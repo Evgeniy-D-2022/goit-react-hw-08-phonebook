@@ -2,11 +2,12 @@ import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 import AppBar from '../AppBar/AppBar';
 import Loader from '../Loader/Loader';
+import css from './Layout.module.css';
 
 
 const Layout = () => {
   return (
-    <div>
+    <div className={css.container}>
       <AppBar />
       <Suspense
         fallback={
