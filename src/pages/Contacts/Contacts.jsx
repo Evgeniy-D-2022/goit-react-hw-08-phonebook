@@ -1,7 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import css from './Contacts.module.css';
-import { selectContacts, selectIsLoading } from 'redux/selectors';
-import { selectError } from 'redux/auth/auth-selectors';
+import { selectContacts, selectIsLoading, selectError } from 'redux/selectors';
 import { useEffect } from 'react';
 import { fetchContacts } from 'redux/operations';
 import Form from 'components/Form/Form';
@@ -16,8 +15,8 @@ const Contacts = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(fetchContacts)
-    }, [dispatch])
+        dispatch(fetchContacts());
+    }, [dispatch]);
 
     return (
         <div className={css.container}>

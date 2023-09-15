@@ -10,7 +10,7 @@ const UserMenu = () => {
         <div className={css.usermenu__wrap}>
             <p className={css.usermenu__name}>Welcome, {name}</p>
             <button className={css.usermenu__btn}
-            onClick={() => dispatch(logOut)}>Log Out</button>
+            onClick={() => dispatch(logOut())}>Log Out</button>
         </div>
     )
 };
