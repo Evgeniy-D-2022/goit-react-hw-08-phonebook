@@ -11,7 +11,7 @@ const Navigation = () => {
             <NavLink className={css.nav__link} to='/' >
                 Home
             </NavLink>
-            {isLoggedIn && <NavLink className={css.navigation__link} to='/contacts'>
+            {isLoggedIn && <NavLink className={css.nav__link} to='/contacts'>
                 Contacts
             </NavLink>}
         </nav>

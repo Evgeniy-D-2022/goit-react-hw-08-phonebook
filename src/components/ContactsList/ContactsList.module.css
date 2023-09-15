@@ -1,14 +1,14 @@
 .contacts__list {
     list-style-type: disc;
-    
 }
 
 .contacts__item {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: 20px;
-    margin-left: 30px;
+    /* margin-left: 30px;
+    margin-bottom: 20px; */
+    margin: 20px;
 }
 
 .contacts__text {
@@ -21,16 +21,16 @@
 .contacts__delBtn {
     color: black;
     font-size: 14px;
-    padding: 14px;
+    font-weight: 600;
+    padding: 10px;
     margin-left: 15px;
     border: none;
-    border-radius: 10px;
+    border-radius: 8px;
     background-color: beige;
     cursor: pointer;
 
     
       &:hover {
-        color: #5240ee;
-        background-color: aqua;
+        background-color: orange;
       }     
 }

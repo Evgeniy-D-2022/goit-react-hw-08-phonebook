@@ -4,14 +4,10 @@
     padding: 14px;
     font-weight: 700;
     color: #0caef4;
-  
-    .active {
-      color: #fc8d05;
+    &:hover,
+    :focus{
+      color: orange;
     }
 };
 
-/* .nav__link:hover,
-.nav__link:focus {
-  transition: color 0.25s;
-  color: #df6005;
-} */
+

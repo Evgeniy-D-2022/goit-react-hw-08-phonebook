@@ -4,28 +4,29 @@
     margin-right: 16px;
   }
   .usermenu__name {
-    color: rgb(237, 108, 16);
+    color: #0caef4;
+    font-size: 18px;
+    font-weight: 600;
     margin-right: 12px;
   }
   
   .usermenu__btn {
     display: inline-block;
-    padding: 8px 6px;
+    padding: 10px 8px;
     border: 0;
-    border-radius: 10px;
+    border-radius: 8px;
     min-width: 80px;
+    font-weight: 600;
   
-    background-size: 40%;
     background-repeat: no-repeat;
     background-position: center;
-    opacity: 0.6;
     transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
     cursor: pointer;
     outline: none;
-    background-color: #f87719;
-    color: white;
+    background-color: beige;
+    color: black;
   }
   .usermenu__btn:hover {
-    background-color: orangered;
+    background-color: orange;
     opacity: 1;
   }

@@ -3,9 +3,9 @@
     text-decoration: none;
     padding: 14px;
     font-weight: 700;
-    color: #19a8e6;
+    color: #0caef4;
   
-    .active {
-      color: #ed890e;
+    &:hover {
+      color: orange;
     }
 }
